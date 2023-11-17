@@ -2,10 +2,15 @@ package designPatterns.strategy;
 
 public class Item {
 
+    private final int price;
     private boolean fresh;
+    
+    public Item(int price) {
+        this.price = price;
+    }
 
     public int getPrice() {
-        return 0;
+        return price;
     }
 
     public boolean isFresh() {

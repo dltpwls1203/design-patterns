@@ -4,17 +4,17 @@ import java.util.List;
 
 public class Calculator {
 
-    private DisCountStrategy disCountStrategy;
+    private DisCountStrategy strategy;
 
-    public Calculator(DisCountStrategy disCountStrategy) {
-        this.disCountStrategy = disCountStrategy;
+    public Calculator(DisCountStrategy strategy) {
+        this.strategy = strategy;
     }
 
-    public int calculate(boolean firstGuest, List<Item> items) {
+    public int calculate(List<Item> items) {
         int sum = 0;
 
         for(Item item : items) {
-            sum += disCountStrategy.getDiscountPrice(item);
+            sum += strategy.getDiscountPrice(item);
         }
 
         /*
